@@ -1,0 +1,5 @@
+import { ExternalLink } from 'lucide-react';
+import { CONTRACTS } from '../contracts/config';
+import type { Lang, TranslationKey } from '../i18n/translations';
+import { translations } from '../i18n/translations';
+export default function Footer({lang}:{lang:Lang}) { const t=(k:TranslationKey)=>translations[lang][k]; return <footer className="footer"><div className="footer-top"><div><img src="/logo.svg" alt="AGENTKEY" className="footer-logo"/><p>{t('footer')}</p></div><div className="footer-links"><a href={`https://bscscan.com/address/${CONTRACTS.token}`} target="_blank" rel="noreferrer">KRYVON <ExternalLink size={12}/></a><a href={`https://bscscan.com/address/${CONTRACTS.nft}`} target="_blank" rel="noreferrer">Ascend NFT <ExternalLink size={12}/></a><a href={`https://bscscan.com/address/${CONTRACTS.directClaim}`} target="_blank" rel="noreferrer">Direct Claim <ExternalLink size={12}/></a><a href="https://agentkey.xyz" target="_blank" rel="noreferrer">agentkey.xyz <ExternalLink size={12}/></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} AGENTKEY</span><span>BUILT ON BNB SMART CHAIN</span></div></footer> }
